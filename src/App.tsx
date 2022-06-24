@@ -28,6 +28,24 @@ function App() {
         },
         {
             Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
+            Fee: 0.030
+        },
+        {
+            Pool: {
                 icon: "https://img.icons8.com/cotton/64/000000/tether--v1.png",
                 name: "STG/USDC",
                 currencyType: "CRYPTO",
@@ -82,6 +100,24 @@ function App() {
         },
         {
             Pool: {
+                icon: "https://img.icons8.com/external-sbts2018-flat-sbts2018/58/000000/external-bitcoin-cryptocurrency-sbts2018-flat-sbts2018-4.png",
+                name: "frax",
+                currencyType: "USD",
+                feild2: "",
+                feild3: "",
+                detail: "FRAK + 3Cry"
+            },
+            BaseVAPY: 0.30,
+            RewardstAPR: {
+                from: 2.21,
+                to: 5.52,
+            },
+            Volume: 14.7,
+            TVL: 182.2,
+            Fee: 0.030
+        },
+        {
+            Pool: {
                 icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
                 name: "cvxeth",
                 currencyType: "CRYPTO",
@@ -100,6 +136,24 @@ function App() {
         },
         {
             Pool: {
+                icon: "https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-ethereum-coins-cryptocurrency-justicon-lineal-color-justicon.png",
+                name: "tricrypto2",
+                currencyType: "CRYPTO",
+                feild2: "VW",
+                feild3: "?",
+                detail: "USDT + wBTC + WETH"
+            },
+            BaseVAPY: 0.41,
+            RewardstAPR: {
+                from: 3.14,
+                to: 7.84
+            },
+            Volume: 28.8,
+            TVL: 878.7,
+            Fee: 0.030
+        },
+        {
+            Pool: {
                 icon: "https://img.icons8.com/external-sbts2018-flat-sbts2018/58/000000/external-bitcoin-cryptocurrency-sbts2018-flat-sbts2018-4.png",
                 name: "frax",
                 currencyType: "USD",
@@ -114,6 +168,24 @@ function App() {
             },
             Volume: 14.7,
             TVL: 182.2,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/tether--v1.png",
+                name: "STG/USDC",
+                currencyType: "CRYPTO",
+                feild2: "FACTORY",
+                feild3: "",
+                detail: "STG + USDC"
+            },
+            BaseVAPY: 9.10,
+            RewardstAPR: {
+                from: 52.31,
+                to: 130.75
+            },
+            Volume: 38.5,
+            TVL: 419.7,
             Fee: 0.030
         },
     ];
@@ -190,130 +262,124 @@ function App() {
                     </Row>
                 </Col>
             </Row>
-            <Row className={"h-100 d-flex m-0 mt-4"}>
-                <Col>
-                    <Row>
-                        <Col>
-                            <div className={"overlayout overCommon"}>
-                                <div className={"overChild overCommon overChildCommon"}>
-                                    <div className={"overFinalChild overCommon overChildCommon"}>
-                                        <div className={"overChildWrapper"}>
-                                            <Row><Col></Col><Col><span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span></Col><Col></Col></Row>
-                                            <Row style={{ margin: "2rem 1rem" }}>
-                                                <Col xxl={2}>
-                                                    <img
-                                                        src={initTableData[detailNum].Pool.icon}
-                                                        alt={initTableData[detailNum].Pool.name}
-                                                        width={30}
-                                                        height={30}
-                                                    />
-                                                </Col>
-                                                <Col xxl={8} className={"text-center h6"}>
-                                                    {initTableData[detailNum].Pool.detail && initTableData[detailNum].Pool.detail}
-                                                </Col>
-                                                <Col xxl={2} className={"text-end"}>
-                                                    <img
-                                                        src={initTableData[detailNum].Pool.icon}
-                                                        alt={initTableData[detailNum].Pool.name}
-                                                        width={30}
-                                                        height={30}
-                                                    />
-                                                </Col>
-                                            </Row>
-
-                                            <Row style={{ margin: "0 1rem" }}>
-                                                <Col>Base vAPY</Col>
-                                                <Col className={"text-end h5"}>
-                                                    {initTableData[detailNum].BaseVAPY+"%"}
-                                                </Col>
-                                            </Row>
-
-                                            <Row style={{ margin: "0 1rem" }}>
-                                                <Col>Rewards tAPR</Col>
-                                                <Col className={"text-end h5"}>
-                                                    <p>{"CRV+" + initTableData[detailNum].RewardstAPR.from + "%"}</p>
-                                                    <p>{"-> " + initTableData[detailNum].RewardstAPR.to + "%"}</p>
-                                                </Col>
-                                            </Row>
-
-                                            <Row style={{ margin: "0 1rem" }}>
-                                                <Col>Volume</Col>
-                                                <Col className={"text-end h5"}>
-                                                    {"$" + initTableData[detailNum].Volume + "M"}
-                                                </Col>
-                                            </Row>
-
-                                            <Row style={{ margin: "0 1rem" }}>
-                                                <Col>TVL</Col>
-                                                <Col className={"text-end h5"}>
-                                                    {"$" + initTableData[detailNum].TVL + "M"}
-                                                </Col>
-                                            </Row>
-
-                                            <Row style={{ margin: "0 1rem" }}>
-                                                <Col>Fee</Col>
-                                                <Col className={"text-end h5"}>
-                                                    {initTableData[detailNum].Fee+ "%"}
-                                                </Col>
-                                            </Row>
-                                            <Button className={"custom-Special-Button"} onClick={()=>onMoreHandle()}>
-                                                <img src="https://img.icons8.com/material/24/000000/resize-diagonal--v1.png" alt={"resize icon"}/>
-                                            </Button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <div className={"followWrapper"}>
-                                <Row><Col></Col><Col><span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span></Col><Col></Col></Row>
-                                <div className={"contentWrapper"}>
-                                    <Row className={"mb-2"}>
-                                        <Col>
-                                            <a href={"#"} target={"_blank"}>
-                                                <img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" alt={"twitter"} />
-                                            </a>
+            <Row className={"h-100 d-flex"} style={{ margin: "5rem 0 0" }}>
+                <Col className={"leftFixedLayout"}>
+                    <div className={"overlayout overCommon"}>
+                        <div className={"overChild overCommon overChildCommon"}>
+                            <div className={"overFinalChild overCommon overChildCommon"}>
+                                <div className={"overChildWrapper"}>
+                                    <Row><Col></Col><Col><span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span></Col><Col></Col></Row>
+                                    <Row style={{ margin: "2rem 1rem" }}>
+                                        <Col xxl={2}>
+                                            <img
+                                                src={initTableData[detailNum].Pool.icon}
+                                                alt={initTableData[detailNum].Pool.name}
+                                                width={30}
+                                                height={30}
+                                            />
                                         </Col>
-                                        <Col>
-                                            <a href={"#"} target={"_blank"}>
-                                                <img src="https://img.icons8.com/ios/50/000000/discord-logo--v1.png" alt={"discord"} />
-                                            </a>
+                                        <Col xxl={8} className={"text-center h6"}>
+                                            {initTableData[detailNum].Pool.detail && initTableData[detailNum].Pool.detail}
                                         </Col>
-                                        <Col>
-                                            <a href={"#"} target={"_blank"}>
-                                                <img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" alt={"instagram"} />
-                                            </a>
-                                        </Col>
-                                        <Col>
-                                            <a href={"#"} target={"_blank"}>
-                                                <img src="https://img.icons8.com/ios/50/000000/telegram-app.png" alt={"telegram"} />
-                                            </a>
-                                        </Col>
-                                        <Col>
-                                            <a href={"#"} target={"_blank"}>
-                                                <img src="https://img.icons8.com/ios/50/000000/medium-monogram--v1.png" alt={"mediun"} />
-                                            </a>
+                                        <Col xxl={2} className={"text-end"}>
+                                            <img
+                                                src={initTableData[detailNum].Pool.icon}
+                                                alt={initTableData[detailNum].Pool.name}
+                                                width={30}
+                                                height={30}
+                                            />
                                         </Col>
                                     </Row>
+
+                                    <Row style={{ margin: "0 1rem" }}>
+                                        <Col>Base vAPY</Col>
+                                        <Col className={"text-end h5"}>
+                                            {initTableData[detailNum].BaseVAPY+"%"}
+                                        </Col>
+                                    </Row>
+
+                                    <Row style={{ margin: "0 1rem" }}>
+                                        <Col>Rewards tAPR</Col>
+                                        <Col className={"text-end h5"}>
+                                            <p>{"CRV+" + initTableData[detailNum].RewardstAPR.from + "%"}</p>
+                                            <p>{"-> " + initTableData[detailNum].RewardstAPR.to + "%"}</p>
+                                        </Col>
+                                    </Row>
+
+                                    <Row style={{ margin: "0 1rem" }}>
+                                        <Col>Volume</Col>
+                                        <Col className={"text-end h5"}>
+                                            {"$" + initTableData[detailNum].Volume + "M"}
+                                        </Col>
+                                    </Row>
+
+                                    <Row style={{ margin: "0 1rem" }}>
+                                        <Col>TVL</Col>
+                                        <Col className={"text-end h5"}>
+                                            {"$" + initTableData[detailNum].TVL + "M"}
+                                        </Col>
+                                    </Row>
+
+                                    <Row style={{ margin: "0 1rem" }}>
+                                        <Col>Fee</Col>
+                                        <Col className={"text-end h5"}>
+                                            {initTableData[detailNum].Fee+ "%"}
+                                        </Col>
+                                    </Row>
+                                    <Button className={"custom-Special-Button"} onClick={()=>onMoreHandle()}>
+                                        <img src="https://img.icons8.com/material/24/000000/resize-diagonal--v1.png" alt={"resize icon"}/>
+                                    </Button>
                                 </div>
                             </div>
-                        </Col>
-                    </Row>
+                        </div>
+                    </div>
+                    <div className={"followWrapper"}>
+                        <Row><Col></Col><Col><span className={"overLayName"}>Follow Us</span></Col><Col></Col></Row>
+                        <div className={"contentWrapper"}>
+                            <Row className={"mb-2"}>
+                                <Col>
+                                    <a href={"#"} target={"_blank"}>
+                                        <img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" alt={"twitter"} />
+                                    </a>
+                                </Col>
+                                <Col>
+                                    <a href={"#"} target={"_blank"}>
+                                        <img src="https://img.icons8.com/ios/50/000000/discord-logo--v1.png" alt={"discord"} />
+                                    </a>
+                                </Col>
+                                <Col>
+                                    <a href={"#"} target={"_blank"}>
+                                        <img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" alt={"instagram"} />
+                                    </a>
+                                </Col>
+                                <Col>
+                                    <a href={"#"} target={"_blank"}>
+                                        <img src="https://img.icons8.com/ios/50/000000/telegram-app.png" alt={"telegram"} />
+                                    </a>
+                                </Col>
+                                <Col>
+                                    <a href={"#"} target={"_blank"}>
+                                        <img src="https://img.icons8.com/ios/50/000000/medium-monogram--v1.png" alt={"mediun"} />
+                                    </a>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+
                 </Col>
                 <Col lg={9} className={"border-1"}>
-                    <Table responsive className={"table-hover"} style={{ cursor: "pointer" }}>
-                        <thead>
-                        <tr>
-                            <th>Pool</th>
-                            <th>Base vAPY</th>
-                            <th>Rewards tAPR</th>
-                            <th>Volume</th>
-                            <th>TVL</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                    <div className={"customBasicTablePos"}>
+                        <table className={"table-hover customTable"} style={{ cursor: "pointer" }}>
+                            <thead>
+                            <tr>
+                                <th>Pool</th>
+                                <th>Base vAPY</th>
+                                <th>Rewards tAPR</th>
+                                <th>Volume</th>
+                                <th>TVL</th>
+                            </tr>
+                            </thead>
+                            <tbody className={"customTBody"}>
                             {initTableData.map((record, key)=>(
                                 <tr key={key} onClick={()=>handleClickRecode(key)}>
                                     <td>
@@ -332,7 +398,7 @@ function App() {
                                                     {record.Pool.currencyType &&
                                                         <span>
                                                             &nbsp;
-                                                            <span className={"bg-secondary text-white"}>
+                                                            <span className={"bg-black text-white"}>
                                                                 { record.Pool.currencyType}
                                                             </span>
                                                         </span>
@@ -340,7 +406,7 @@ function App() {
                                                     {record.Pool.feild2 &&
                                                         <span>
                                                             &nbsp;
-                                                            <span className={"bg-secondary text-white"}>
+                                                            <span className={"bg-black text-white"}>
                                                                 { record.Pool.feild2 }
                                                             </span>
                                                         </span>
@@ -366,8 +432,12 @@ function App() {
                                     <td>{ "$" + record.TVL + "M" }</td>
                                 </tr>
                             ))}
-                        </tbody>
-                    </Table>
+                            </tbody>
+                        </table>
+                        <span className={"overLayNameSeeAll w-100"}>
+                            <button onClick={()=>{onMoreHandle()}}>See all Pools</button>
+                        </span>
+                    </div>
                 </Col>
             </Row>
         </Container>

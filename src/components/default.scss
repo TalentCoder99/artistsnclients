@@ -110,3 +110,42 @@
 .removeBorder {
   border-left-color: transparent;
 }
+.customBasicTablePos {
+  position: relative;
+  width: calc(100% + 10px);
+  border: 2px solid gray;
+  min-height: 100vh;
+  padding: 0 1rem;
+
+  & > .overLayNameSeeAll {
+    position: absolute;
+    bottom: 0;
+    text-align: center
+  }
+}
+.customTable {
+  position: absolute;
+  top: -2rem;
+
+  width: calc(100% - 2rem);
+  & > tbody {
+    & > tr {
+      &:first-child > td{
+        padding-top: 1.5rem;
+        border-top-color: transparent;
+      }
+
+      &:last-child > td{
+        border-bottom-color: transparent;
+      }
+
+      & > td {
+        //margin: 1rem;
+        padding: 1rem 0;
+        border: 2px solid gray;
+        border-right-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+  }
+}
