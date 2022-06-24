@@ -15,7 +15,7 @@ function App() {
                 currencyType: "CRYPTO",
                 feild2: "VW",
                 feild3: "?",
-                detail: "USDT + wBTC + WETH"
+                detail: "USDT + wBTC"
             },
             BaseVAPY: 0.41,
             RewardstAPR: {
@@ -141,7 +141,7 @@ function App() {
                 currencyType: "CRYPTO",
                 feild2: "VW",
                 feild3: "?",
-                detail: "USDT + wBTC + WETH"
+                detail: "USDT + wBTC"
             },
             BaseVAPY: 0.41,
             RewardstAPR: {
@@ -201,7 +201,7 @@ function App() {
     <ThemeProvider breakpoints={['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}>
         <Container className={"mw-100 min-vh-100 m-auto p-1"}>
             <Row>
-                <Col lg={3} className={"bg-white"}>
+                <Col xl={3} lg={12} className={"bg-white"}>
                     <InputGroup className={"p-0 m-1 searchShadow"}>
                         <InputGroup.Text id={"search"} className={"p-0 removeBackground"}>
                             <Button onClick={()=>onMoreHandle()} variant={"outline-secondary"} style={{ height: "100%" }} className={"p-0 m-0 border-0"}>
@@ -217,7 +217,7 @@ function App() {
                         <Form.Control aria-label={"search"} aria-describedby={"searchGroup"} className={"removeBorder"} />
                     </InputGroup>
                 </Col>
-                <Col lg={6} className={"bg-white"}>
+                <Col xl={6} lg={12} className={"bg-white"}>
                     <Row>
                         <Col><Button variant={"outline-info"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>All</Button></Col>
                         <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>USD</Button></Col>
@@ -228,15 +228,14 @@ function App() {
                         <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>My&nbsp;Dashbord</Button></Col>
                     </Row>
                 </Col>
-                <Col lg={3} md={1} className={"bg-white"}>
+                <Col xl={3} lg={12} className={"bg-white"}>
                     <Row className={"align-content-end"}>
-                        <Col/>
-                        <Col lg={2} className={"p-0 m-0"}>
+                        <Col className={"p-0 m-0"} style={{width: "4rem"}}>
                             <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>
                                 <span>Risk type</span>
                             </Button>
                         </Col>
-                        <Col lg={3}>
+                        <Col>
                             <Dropdown>
                                 <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start"} id={"risk"}>All</Dropdown.Toggle>
                             </Dropdown>
@@ -246,10 +245,10 @@ function App() {
                             {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
                             {/*</Dropdown.Menu>*/}
                         </Col>
-                        <Col lg={2} className={"p-0 m-0"}>
+                        <Col className={"p-0 m-0"} style={{width: "4rem"}}>
                             <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>Risk type</Button>
                         </Col>
-                        <Col lg={3}>
+                        <Col>
                             <Dropdown>
                                 <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start"} id={"risk"}>All</Dropdown.Toggle>
                             </Dropdown>
@@ -262,15 +261,17 @@ function App() {
                     </Row>
                 </Col>
             </Row>
-            <Row className={"h-100 d-flex"} style={{ margin: "5rem 0 0" }}>
-                <Col className={"leftFixedLayout"}>
+            <Row style={{ margin: "5rem 0 0" }}>
+                <Col xl={3} lg={12} className={"leftFixedLayout"}>
                     <div className={"overlayout overCommon"}>
                         <div className={"overChild overCommon overChildCommon"}>
                             <div className={"overFinalChild overCommon overChildCommon"}>
                                 <div className={"overChildWrapper"}>
-                                    <Row><Col></Col><Col><span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span></Col><Col></Col></Row>
+                                    <div className={"overLaynameWrapper"}>
+                                        <span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span>
+                                    </div>
                                     <Row style={{ margin: "2rem 1rem" }}>
-                                        <Col xxl={2}>
+                                        <Col>
                                             <img
                                                 src={initTableData[detailNum].Pool.icon}
                                                 alt={initTableData[detailNum].Pool.name}
@@ -278,10 +279,10 @@ function App() {
                                                 height={30}
                                             />
                                         </Col>
-                                        <Col xxl={8} className={"text-center h6"}>
+                                        <Col className={"text-center h6"}>
                                             {initTableData[detailNum].Pool.detail && initTableData[detailNum].Pool.detail}
                                         </Col>
-                                        <Col xxl={2} className={"text-end"}>
+                                        <Col className={"text-end"}>
                                             <img
                                                 src={initTableData[detailNum].Pool.icon}
                                                 alt={initTableData[detailNum].Pool.name}
@@ -333,41 +334,42 @@ function App() {
                             </div>
                         </div>
                     </div>
-                    <div className={"followWrapper"}>
-                        <Row><Col></Col><Col><span className={"overLayName"}>Follow Us</span></Col><Col></Col></Row>
+                    <div className={"followWrapper fixedHeight"}>
+                        <div className={"overLaynameWrapper"}>
+                            <span className={"overLayName"}>Follow Us</span>
+                        </div>
                         <div className={"contentWrapper"}>
                             <Row className={"mb-2"}>
                                 <Col>
                                     <a href={"#"} target={"_blank"}>
-                                        <img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" alt={"twitter"} />
+                                        <img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" alt={"twitter"} width={25} height={25}/>
                                     </a>
                                 </Col>
                                 <Col>
                                     <a href={"#"} target={"_blank"}>
-                                        <img src="https://img.icons8.com/ios/50/000000/discord-logo--v1.png" alt={"discord"} />
+                                        <img src="https://img.icons8.com/ios/50/000000/discord-logo--v1.png" alt={"discord"} width={25} height={25} />
                                     </a>
                                 </Col>
                                 <Col>
                                     <a href={"#"} target={"_blank"}>
-                                        <img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" alt={"instagram"} />
+                                        <img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" alt={"instagram"} width={25} height={25} />
                                     </a>
                                 </Col>
                                 <Col>
                                     <a href={"#"} target={"_blank"}>
-                                        <img src="https://img.icons8.com/ios/50/000000/telegram-app.png" alt={"telegram"} />
+                                        <img src="https://img.icons8.com/ios/50/000000/telegram-app.png" alt={"telegram"} width={25} height={25} />
                                     </a>
                                 </Col>
                                 <Col>
                                     <a href={"#"} target={"_blank"}>
-                                        <img src="https://img.icons8.com/ios/50/000000/medium-monogram--v1.png" alt={"mediun"} />
+                                        <img src="https://img.icons8.com/ios/50/000000/medium-monogram--v1.png" alt={"mediun"} width={25} height={25} />
                                     </a>
                                 </Col>
                             </Row>
                         </div>
                     </div>
-
                 </Col>
-                <Col lg={9} className={"border-1"}>
+                <Col xl={9} lg={12} className={"border-1"}>
                     <div className={"customBasicTablePos"}>
                         <table className={"table-hover customTable"} style={{ cursor: "pointer" }}>
                             <thead>
@@ -434,7 +436,7 @@ function App() {
                             ))}
                             </tbody>
                         </table>
-                        <span className={"overLayNameSeeAll w-100"}>
+                        <span className={"overLayNameSeeAll"}>
                             <button onClick={()=>{onMoreHandle()}}>See all Pools</button>
                         </span>
                     </div>

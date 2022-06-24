@@ -33,10 +33,15 @@
 }
 
 .overChildWrapper {
-  //justify-content: space-around;
-  height: calc(100% - 25px);
+  height: calc(100% - 1.5rem);
   margin: 1rem;
   border: 1px solid black;
+}
+
+.overLaynameWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .overLayName {
@@ -113,13 +118,14 @@
 .customBasicTablePos {
   position: relative;
   width: calc(100% + 10px);
-  border: 2px solid gray;
+  //border: 2px solid gray;
   min-height: 100vh;
   padding: 0 1rem;
 
   & > .overLayNameSeeAll {
     position: absolute;
     bottom: 0;
+    width: calc(100% - 2rem);
     text-align: center
   }
 }
@@ -130,14 +136,14 @@
   width: calc(100% - 2rem);
   & > tbody {
     & > tr {
-      &:first-child > td{
-        padding-top: 1.5rem;
-        border-top-color: transparent;
-      }
+      //&:first-child > td{
+      //  padding-top: 1.5rem;
+      //  border-top-color: transparent;
+      //}
 
-      &:last-child > td{
-        border-bottom-color: transparent;
-      }
+      //&:last-child > td{
+      //  border-bottom-color: transparent;
+      //}
 
       & > td {
         //margin: 1rem;
@@ -148,4 +154,8 @@
       }
     }
   }
+}
+
+.fixedHeight {
+  height: 10rem;
 }
