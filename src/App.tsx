@@ -199,7 +199,7 @@ function App() {
   // @ts-ignore
     return (
     <ThemeProvider breakpoints={['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}>
-        <Container className={"mw-100 min-vh-100 m-auto p-1"}>
+        <Container className={"mw-100 pv-4"}>
             <Row>
                 <Col xl={3} lg={12} className={"bg-white"}>
                     <InputGroup className={"p-0 m-1 searchShadow"}>
@@ -231,13 +231,11 @@ function App() {
                 <Col xl={3} lg={12} className={"bg-white"}>
                     <Row className={"align-content-end"}>
                         <Col className={"p-0 m-0"} style={{width: "4rem"}}>
-                            <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>
-                                <span>Risk type</span>
-                            </Button>
+                            <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>Risk type</Button>
                         </Col>
                         <Col>
                             <Dropdown>
-                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start"} id={"risk"}>All</Dropdown.Toggle>
+                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1"} id={"risk"}>All</Dropdown.Toggle>
                             </Dropdown>
                             {/*<Dropdown.Menu>*/}
                             {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
@@ -246,11 +244,11 @@ function App() {
                             {/*</Dropdown.Menu>*/}
                         </Col>
                         <Col className={"p-0 m-0"} style={{width: "4rem"}}>
-                            <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>Risk type</Button>
+                            <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>Platform</Button>
                         </Col>
                         <Col>
                             <Dropdown>
-                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start"} id={"risk"}>All</Dropdown.Toggle>
+                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1"} id={"risk"}>All</Dropdown.Toggle>
                             </Dropdown>
                             {/*<Dropdown.Menu>*/}
                             {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
@@ -436,9 +434,9 @@ function App() {
                             ))}
                             </tbody>
                         </table>
-                        <span className={"overLayNameSeeAll"}>
-                            <button onClick={()=>{onMoreHandle()}}>See all Pools</button>
-                        </span>
+                        {/*<span className={"overLayNameSeeAll"}>*/}
+                        {/*    <button onClick={()=>{onMoreHandle()}}>See all Pools</button>*/}
+                        {/*</span>*/}
                     </div>
                 </Col>
             </Row>
