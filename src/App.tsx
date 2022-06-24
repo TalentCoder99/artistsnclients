@@ -199,9 +199,21 @@ function App() {
   // @ts-ignore
     return (
     <ThemeProvider breakpoints={['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}>
-        <Container className={"mw-100 pv-4"}>
+        <Container className={"mw-100 pv-4"} style={{ minWidth: "525px" }}>
+            <div className="linearGradient">
+                <svg viewBox='0 0 2500 7000' xmlns='http://www.w3.org/2000/svg'>
+                    <filter id='noiseFilter'>
+                        <feTurbulence 
+                        type='fractalNoise' 
+                        baseFrequency='8.64' 
+                        numOctaves='6' 
+                        stitchTiles='stitch'/>
+                    </filter>
+                    <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
+                </svg>
+            </div>
             <Row>
-                <Col xl={3} lg={12} className={"bg-white"}>
+                <Col xl={3} lg={12}>
                     <InputGroup className={"p-0 m-1 searchShadow"}>
                         <InputGroup.Text id={"search"} className={"p-0 removeBackground"}>
                             <Button onClick={()=>onMoreHandle()} variant={"outline-secondary"} style={{ height: "100%" }} className={"p-0 m-0 border-0"}>
@@ -217,25 +229,25 @@ function App() {
                         <Form.Control aria-label={"search"} aria-describedby={"searchGroup"} className={"removeBorder"} />
                     </InputGroup>
                 </Col>
-                <Col xl={6} lg={12} className={"bg-white"}>
+                <Col xl={6} lg={12}>
                     <Row>
-                        <Col><Button variant={"outline-info"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>All</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>USD</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>BTC</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>ETH</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>Crypto</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>Others</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1"} onClick={()=>onMoreHandle()}>My&nbsp;Dashbord</Button></Col>
+                        <Col><Button variant={"outline-info"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>All</Button></Col>
+                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>USD</Button></Col>
+                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>BTC</Button></Col>
+                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>ETH</Button></Col>
+                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>Crypto</Button></Col>
+                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>Others</Button></Col>
+                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>My&nbsp;Dashbord</Button></Col>
                     </Row>
                 </Col>
-                <Col xl={3} lg={12} className={"bg-white"}>
+                <Col xl={3} lg={12}>
                     <Row className={"align-content-end"}>
-                        <Col className={"p-0 m-0"} style={{width: "4rem"}}>
-                            <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>Risk type</Button>
+                        <Col className={"p-0 m-0 child-obj-center"} style={{width: "4rem"}}>
+                            <p className="text-end m-0">Risk type</p>
                         </Col>
                         <Col>
                             <Dropdown>
-                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1"} id={"risk"}>All</Dropdown.Toggle>
+                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
                             </Dropdown>
                             {/*<Dropdown.Menu>*/}
                             {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
@@ -243,12 +255,12 @@ function App() {
                             {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
                             {/*</Dropdown.Menu>*/}
                         </Col>
-                        <Col className={"p-0 m-0"} style={{width: "4rem"}}>
-                            <Button variant={"outline-secondary"} className={"p-0 pt-2 m-0 w-100 disabled border-0 text-center"}>Platform</Button>
+                        <Col className={"p-0 m-0 child-obj-center"}>
+                            <p className="text-end m-0">Platform</p>
                         </Col>
                         <Col>
                             <Dropdown>
-                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1"} id={"risk"}>All</Dropdown.Toggle>
+                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
                             </Dropdown>
                             {/*<Dropdown.Menu>*/}
                             {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
@@ -259,8 +271,8 @@ function App() {
                     </Row>
                 </Col>
             </Row>
-            <Row style={{ margin: "5rem 0 0" }}>
-                <Col xl={3} lg={12} className={"leftFixedLayout"}>
+            <Row style={{ margin: "2rem 0 0" }}>
+                <Col xl={3} lg={12} className={"leftFixedLayout"} style={{ marginTop: "1rem" }}>
                     <div className={"overlayout overCommon"}>
                         <div className={"overChild overCommon overChildCommon"}>
                             <div className={"overFinalChild overCommon overChildCommon"}>
@@ -388,37 +400,39 @@ function App() {
                                                 <img
                                                     src={record.Pool.icon}
                                                     alt={record.Pool.name}
-                                                    width={50}
-                                                    height={50}
+                                                    width={70}
+                                                    height={70}
                                                 />
                                             </Col>
                                             <Col>
-                                                <div className={"m-0 p-0"}>
-                                                    {record.Pool.name}
-                                                    {record.Pool.currencyType &&
-                                                        <span>
-                                                            &nbsp;
-                                                            <span className={"bg-black text-white"}>
-                                                                { record.Pool.currencyType}
-                                                            </span>
-                                                        </span>
-                                                    }
-                                                    {record.Pool.feild2 &&
-                                                        <span>
-                                                            &nbsp;
-                                                            <span className={"bg-black text-white"}>
-                                                                { record.Pool.feild2 }
-                                                            </span>
-                                                        </span>
-                                                    }
-                                                    {record.Pool.feild3 &&
-                                                        <span>
-                                                            &nbsp;
+                                                <div className={"m-0 p-0 child-text-center"}>
+                                                    <p>
+                                                        {record.Pool.name}
+                                                        {record.Pool.currencyType &&
                                                             <span>
-                                                                {"[" + record.Pool.feild3 + "]"}
+                                                                &nbsp;
+                                                                <span className={"bg-black text-white"}>
+                                                                    { record.Pool.currencyType}
+                                                                </span>
                                                             </span>
-                                                        </span>
-                                                    }
+                                                        }
+                                                        {record.Pool.feild2 &&
+                                                            <span>
+                                                                &nbsp;
+                                                                <span className={"bg-black text-white"}>
+                                                                    { record.Pool.feild2 }
+                                                                </span>
+                                                            </span>
+                                                        }
+                                                        {record.Pool.feild3 &&
+                                                            <span>
+                                                                &nbsp;
+                                                                <span>
+                                                                    {"[" + record.Pool.feild3 + "]"}
+                                                                </span>
+                                                            </span>
+                                                        }
+                                                    </p>
                                                 </div>
                                                 <p className={"m-0 p-0"}>
                                                     {record.Pool.detail}
@@ -437,6 +451,7 @@ function App() {
                         {/*<span className={"overLayNameSeeAll"}>*/}
                         {/*    <button onClick={()=>{onMoreHandle()}}>See all Pools</button>*/}
                         {/*</span>*/}
+                        <div className="custom-outl-table"></div>
                     </div>
                 </Col>
             </Row>
