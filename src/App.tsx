@@ -3,6 +3,7 @@ import ThemeProvider from "react-bootstrap/ThemeProvider";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "react-bootstrap/Form";
 import {Button, Col, Container, Dropdown, InputGroup, Row, Card, Table} from "react-bootstrap";
+import "./components/default.scss";
 
 function App() {
     const [detailNum, setDetailNum] = React.useState(0);
@@ -122,10 +123,11 @@ function App() {
     const onMoreHandle = () => {
         alert("Welcome");
     }
+
   // @ts-ignore
     return (
     <ThemeProvider breakpoints={['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}>
-        <Container className={"mw-100 min-vh-100 m-auto p-5"}>
+        <Container className={"mw-100 min-vh-100 m-auto p-1"}>
             <Row>
                 <Col lg={3} className={"bg-white"}>
                     <InputGroup className={"p-0 m-1"}>
@@ -189,115 +191,114 @@ function App() {
                 </Col>
             </Row>
             <Row className={"h-100 d-flex m-0 mt-4"}>
-                <Col style={{ marginRight: "1rem" }}>
+                <Col>
                     <Row>
-                        <Col className={"p-0"}>
-                            <Card
-                                bg={"light"}
-                                key={0}
-                                className="mb-2"
-                            >
-                                <Card.Header className={"text-center"}>
-                                    {initTableData[detailNum].Pool.name && initTableData[detailNum].Pool.name}
-                                </Card.Header>
-                                <Card.Body>
-                                    <Card.Title className={"text-center mt-1 mb-5"}>
-                                        <span>
-                                            <img
-                                                src={initTableData[detailNum].Pool.icon}
-                                                alt={initTableData[detailNum].Pool.name}
-                                                width={30}
-                                                height={30}
-                                                style={{ marginRight: "1rem" }}
-                                            />
-                                        </span>
-                                        <span>
-                                            {initTableData[detailNum].Pool.detail && initTableData[detailNum].Pool.detail}
-                                        </span>
-                                    </Card.Title>
-                                    <Card.Text>
-                                        <Row className={"mb-2"}>
-                                            <Col>Base vAPY</Col>
-                                            <Col className={"text-end h5"}>
-                                                {initTableData[detailNum].BaseVAPY+"%"}
-                                            </Col>
-                                        </Row>
-                                        <Row className={"mb-2"}>
-                                            <Col>Rewards tAPR</Col>
-                                            <Col className={"text-end h5"}>
-                                                <p>{"CRV+" + initTableData[detailNum].RewardstAPR.from + "%"}</p>
-                                                <p>{"-> " + initTableData[detailNum].RewardstAPR.to + "%"}</p>
-                                            </Col>
-                                        </Row>
-                                        <Row className={"mb-2"}>
-                                            <Col>Volume</Col>
-                                            <Col className={"text-end h5"}>
-                                                {"$" + initTableData[detailNum].Volume + "M"}
-                                            </Col>
-                                        </Row>
-                                        <Row className={"mb-2"}>
-                                            <Col>TVL</Col>
-                                            <Col className={"text-end h5"}>
-                                                {"$" + initTableData[detailNum].TVL + "M"}
-                                            </Col>
-                                        </Row>
-                                        <Row className={"mb-2"}>
-                                            <Col>Fee</Col>
-                                            <Col className={"text-end h5"}>
-                                                {initTableData[detailNum].Fee+ "%"}
-                                            </Col>
-                                        </Row>
-                                        <Row className={"mt-2"}>
-                                            <Col/>
-                                            <Col className={"text-end"}>
-                                                <Button variant={"outline-secondary border-0"} className={"m-1"} onClick={()=>onMoreHandle()}>more</Button>
-                                            </Col>
-                                        </Row>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
+                        <Col>
+                            <div className={"overlayout overCommon"}>
+                                <div className={"overChild overCommon overChildCommon"}>
+                                    <div className={"overFinalChild overCommon overChildCommon"}>
+                                        <div className={"overChildWrapper"}>
+                                            <Row><Col></Col><Col><span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span></Col><Col></Col></Row>
+                                            <Row style={{ margin: "2rem 1rem" }}>
+                                                <Col xxl={2}>
+                                                    <img
+                                                        src={initTableData[detailNum].Pool.icon}
+                                                        alt={initTableData[detailNum].Pool.name}
+                                                        width={30}
+                                                        height={30}
+                                                    />
+                                                </Col>
+                                                <Col xxl={8} className={"text-center h6"}>
+                                                    {initTableData[detailNum].Pool.detail && initTableData[detailNum].Pool.detail}
+                                                </Col>
+                                                <Col xxl={2} className={"text-end"}>
+                                                    <img
+                                                        src={initTableData[detailNum].Pool.icon}
+                                                        alt={initTableData[detailNum].Pool.name}
+                                                        width={30}
+                                                        height={30}
+                                                    />
+                                                </Col>
+                                            </Row>
+
+                                            <Row style={{ margin: "0 1rem" }}>
+                                                <Col>Base vAPY</Col>
+                                                <Col className={"text-end h5"}>
+                                                    {initTableData[detailNum].BaseVAPY+"%"}
+                                                </Col>
+                                            </Row>
+
+                                            <Row style={{ margin: "0 1rem" }}>
+                                                <Col>Rewards tAPR</Col>
+                                                <Col className={"text-end h5"}>
+                                                    <p>{"CRV+" + initTableData[detailNum].RewardstAPR.from + "%"}</p>
+                                                    <p>{"-> " + initTableData[detailNum].RewardstAPR.to + "%"}</p>
+                                                </Col>
+                                            </Row>
+
+                                            <Row style={{ margin: "0 1rem" }}>
+                                                <Col>Volume</Col>
+                                                <Col className={"text-end h5"}>
+                                                    {"$" + initTableData[detailNum].Volume + "M"}
+                                                </Col>
+                                            </Row>
+
+                                            <Row style={{ margin: "0 1rem" }}>
+                                                <Col>TVL</Col>
+                                                <Col className={"text-end h5"}>
+                                                    {"$" + initTableData[detailNum].TVL + "M"}
+                                                </Col>
+                                            </Row>
+
+                                            <Row style={{ margin: "0 1rem" }}>
+                                                <Col>Fee</Col>
+                                                <Col className={"text-end h5"}>
+                                                    {initTableData[detailNum].Fee+ "%"}
+                                                </Col>
+                                            </Row>
+                                            <Button className={"custom-Special-Button"} onClick={()=>onMoreHandle()}>
+                                                <img src="https://img.icons8.com/material/24/000000/resize-diagonal--v1.png" alt={"resize icon"}/>
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </Col>
                     </Row>
-                    <Row className={"mb-5"}>
-                        <Col className={"p-0"}>
-                            <Card
-                                bg={"light"}
-                                key={0}
-                                className="mb-2"
-                            >
-                                <Card.Body>
-                                    <Card.Title className={"text-center mt-1 mb-5"}>Follow us</Card.Title>
-                                    <Card.Text>
-                                        <Row className={"mb-2"}>
-                                            <Col>
-                                                <a href={"#"} target={"_blank"}>
-                                                    <img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" alt={"twitter"} />
-                                                </a>
-                                            </Col>
-                                            <Col>
-                                                <a href={"#"} target={"_blank"}>
-                                                    <img src="https://img.icons8.com/ios/50/000000/discord-logo--v1.png" alt={"discord"} />
-                                                </a>
-                                            </Col>
-                                            <Col>
-                                                <a href={"#"} target={"_blank"}>
-                                                    <img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" alt={"instagram"} />
-                                                </a>
-                                            </Col>
-                                            <Col>
-                                                <a href={"#"} target={"_blank"}>
-                                                    <img src="https://img.icons8.com/ios/50/000000/telegram-app.png" alt={"telegram"} />
-                                                </a>
-                                            </Col>
-                                            <Col>
-                                                <a href={"#"} target={"_blank"}>
-                                                    <img src="https://img.icons8.com/ios/50/000000/medium-monogram--v1.png" alt={"mediun"} />
-                                                </a>
-                                            </Col>
-                                        </Row>
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
+                    <Row>
+                        <Col>
+                            <div className={"followWrapper"}>
+                                <Row><Col></Col><Col><span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span></Col><Col></Col></Row>
+                                <div className={"contentWrapper"}>
+                                    <Row className={"mb-2"}>
+                                        <Col>
+                                            <a href={"#"} target={"_blank"}>
+                                                <img src="https://img.icons8.com/ios/50/000000/twitter--v1.png" alt={"twitter"} />
+                                            </a>
+                                        </Col>
+                                        <Col>
+                                            <a href={"#"} target={"_blank"}>
+                                                <img src="https://img.icons8.com/ios/50/000000/discord-logo--v1.png" alt={"discord"} />
+                                            </a>
+                                        </Col>
+                                        <Col>
+                                            <a href={"#"} target={"_blank"}>
+                                                <img src="https://img.icons8.com/ios/50/000000/instagram-new--v3.png" alt={"instagram"} />
+                                            </a>
+                                        </Col>
+                                        <Col>
+                                            <a href={"#"} target={"_blank"}>
+                                                <img src="https://img.icons8.com/ios/50/000000/telegram-app.png" alt={"telegram"} />
+                                            </a>
+                                        </Col>
+                                        <Col>
+                                            <a href={"#"} target={"_blank"}>
+                                                <img src="https://img.icons8.com/ios/50/000000/medium-monogram--v1.png" alt={"mediun"} />
+                                            </a>
+                                        </Col>
+                                    </Row>
+                                </div>
+                            </div>
                         </Col>
                     </Row>
                 </Col>
@@ -313,72 +314,58 @@ function App() {
                         </tr>
                         </thead>
                         <tbody>
-                        {initTableData.map((record, key)=>(
-                            <tr key={key} onClick={()=>handleClickRecode(key)}>
-                                <td>
-                                    <Row>
-                                        <Col xs={3} className={"d-flex align-items-lg-center"}>
-                                            <img
-                                                src={record.Pool.icon}
-                                                alt={record.Pool.name}
-                                                width={50}
-                                                height={50}
-                                            />
-                                        </Col>
-                                        <Col>
-                                            <p className={"m-0 p-0"}>
-                                                {record.Pool.name}
-                                                {record.Pool.currencyType &&
-                                                    <span>
-                                                        &nbsp;
-                                                        <span className={"bg-secondary text-white"}>
-                                                            { record.Pool.currencyType}
-                                                        </span>
-                                                    </span>
-                                                }
-                                                {record.Pool.feild2 &&
-                                                    <span>
-                                                        &nbsp;
-                                                        <span className={"bg-secondary text-white"}>
-                                                            { record.Pool.feild2 }
-                                                        </span>
-                                                    </span>
-                                                }
-                                                {record.Pool.feild3 &&
-                                                    <span>
-                                                        &nbsp;
+                            {initTableData.map((record, key)=>(
+                                <tr key={key} onClick={()=>handleClickRecode(key)}>
+                                    <td>
+                                        <Row>
+                                            <Col xs={3} className={"d-flex align-items-lg-center"}>
+                                                <img
+                                                    src={record.Pool.icon}
+                                                    alt={record.Pool.name}
+                                                    width={50}
+                                                    height={50}
+                                                />
+                                            </Col>
+                                            <Col>
+                                                <div className={"m-0 p-0"}>
+                                                    {record.Pool.name}
+                                                    {record.Pool.currencyType &&
                                                         <span>
-                                                            {"[" + record.Pool.feild3 + "]"}
+                                                            &nbsp;
+                                                            <span className={"bg-secondary text-white"}>
+                                                                { record.Pool.currencyType}
+                                                            </span>
                                                         </span>
-                                                    </span>
-                                                }
-                                            </p>
-                                            <p className={"m-0 p-0"}>
-                                                {record.Pool.detail}
-                                            </p>
-                                        </Col>
-                                    </Row>
-                                </td>
-                                <td>
-                                    <div>{record.BaseVAPY + "%"}</div>
-                                </td>
-                                <td>
-                                    <div>
-                                        {"+" + record.RewardstAPR.from + "% -> " + record.RewardstAPR.to+"% CRV"}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        { "$" + record.Volume + "M" }
-                                    </div>
-                                </td>
-                                <td>
-                                    <div>
-                                        { "$" + record.TVL + "M" }
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
+                                                    }
+                                                    {record.Pool.feild2 &&
+                                                        <span>
+                                                            &nbsp;
+                                                            <span className={"bg-secondary text-white"}>
+                                                                { record.Pool.feild2 }
+                                                            </span>
+                                                        </span>
+                                                    }
+                                                    {record.Pool.feild3 &&
+                                                        <span>
+                                                            &nbsp;
+                                                            <span>
+                                                                {"[" + record.Pool.feild3 + "]"}
+                                                            </span>
+                                                        </span>
+                                                    }
+                                                </div>
+                                                <p className={"m-0 p-0"}>
+                                                    {record.Pool.detail}
+                                                </p>
+                                            </Col>
+                                        </Row>
+                                    </td>
+                                    <td>{record.BaseVAPY + "%"}</td>
+                                    <td>{"+" + record.RewardstAPR.from + "% -> " + record.RewardstAPR.to+"% CRV"}</td>
+                                    <td>{ "$" + record.Volume + "M" }</td>
+                                    <td>{ "$" + record.TVL + "M" }</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </Table>
                 </Col>
