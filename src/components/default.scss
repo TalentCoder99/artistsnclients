@@ -99,3 +99,14 @@
   border: 1px solid black;
 }
 
+.searchShadow {
+  box-shadow: 2px 3px 0 rgba(black, .8);
+}
+.removeBackground {
+  background-color: transparent;
+  border-right-color: transparent;
+}
+
+.removeBorder {
+  border-left-color: transparent;
+}

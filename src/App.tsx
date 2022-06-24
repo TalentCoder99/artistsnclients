@@ -130,19 +130,19 @@ function App() {
         <Container className={"mw-100 min-vh-100 m-auto p-1"}>
             <Row>
                 <Col lg={3} className={"bg-white"}>
-                    <InputGroup className={"p-0 m-1"}>
-                        <InputGroup.Text id={"search"} className={"p-0"}>
+                    <InputGroup className={"p-0 m-1 searchShadow"}>
+                        <InputGroup.Text id={"search"} className={"p-0 removeBackground"}>
                             <Button onClick={()=>onMoreHandle()} variant={"outline-secondary"} style={{ height: "100%" }} className={"p-0 m-0 border-0"}>
                                 <img
                                     src="https://img.icons8.com/ios/50/000000/search--v1.png"
                                     alt={"search"}
-                                    width={30}
-                                    height={30}
+                                    width={25}
+                                    height={25}
                                     style={{ margin: "auto 1rem" }}
                                 />
                             </Button>
                         </InputGroup.Text>
-                        <Form.Control aria-label={"search"} aria-describedby={"searchGroup"} />
+                        <Form.Control aria-label={"search"} aria-describedby={"searchGroup"} className={"removeBorder"} />
                     </InputGroup>
                 </Col>
                 <Col lg={6} className={"bg-white"}>
