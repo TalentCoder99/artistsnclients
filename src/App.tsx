@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "react-bootstrap/Form";
 import {Button, Col, Container, Dropdown, InputGroup, Row, Card, Table} from "react-bootstrap";
 import "./components/default.scss";
+import { kMaxLength } from "buffer";
+import { maxHeaderSize } from "http";
 
 function App() {
     const [detailNum, setDetailNum] = React.useState(0);
@@ -15,7 +17,7 @@ function App() {
                 currencyType: "CRYPTO",
                 feild2: "VW",
                 feild3: "?",
-                detail: "USDT + wBTC"
+                detail: "USDT + wBTC + USD"
             },
             BaseVAPY: 0.41,
             RewardstAPR: {
@@ -114,6 +116,132 @@ function App() {
             },
             Volume: 14.7,
             TVL: 182.2,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/cotton/64/000000/nft-collection.png",
+                name: "cvxeth",
+                currencyType: "CRYPTO",
+                feild2: "V2",
+                feild3: "",
+                detail: "CVX + ETH"
+            },
+            BaseVAPY: 6.12,
+            RewardstAPR: {
+                from: 7.38,
+                to: 10.21,
+            },
+            Volume: 16.5,
+            TVL: 229,
             Fee: 0.030
         },
         {
@@ -281,7 +409,7 @@ function App() {
                                         <span className={"overLayName"}>{initTableData[detailNum].Pool.name}</span>
                                     </div>
                                     <Row style={{ margin: "2rem 1rem" }}>
-                                        <Col>
+                                        <Col xs={1}>
                                             <img
                                                 src={initTableData[detailNum].Pool.icon}
                                                 alt={initTableData[detailNum].Pool.name}
@@ -289,10 +417,10 @@ function App() {
                                                 height={30}
                                             />
                                         </Col>
-                                        <Col className={"text-center h6"}>
+                                        <Col className={"text-center h6 custom-detail-title"}>
                                             {initTableData[detailNum].Pool.detail && initTableData[detailNum].Pool.detail}
                                         </Col>
-                                        <Col className={"text-end"}>
+                                        <Col xs={1} className={"text-start"} style={{marginRight:"1rem"}}>
                                             <img
                                                 src={initTableData[detailNum].Pool.icon}
                                                 alt={initTableData[detailNum].Pool.name}

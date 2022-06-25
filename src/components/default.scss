@@ -4,7 +4,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  filter: contrast(290%) brightness(1000%);
+  filter: contrast(200%) brightness(1000%);
   background: 
   linear-gradient(215deg, rgb(95, 57, 1), rgba(0, 0, 0, 0.5)),
   url(../noise.svg);
@@ -17,7 +17,7 @@
 }
 
 .bg-custom-btn {
-  background-color: rgb(245, 239, 224) !important;
+  background-color: transparent !important;
   &:hover {
     color: lightgray;
   }
@@ -42,7 +42,7 @@
   width: 100%;
   height: 100%;
   content: "";
-  background-color: rgb(245, 239, 224);
+  background-color: white;
 }
 
 .overChild {
@@ -75,11 +75,17 @@
 
 .overLayName {
   position: absolute;
-  background-color: rgb(245, 239, 224);
+  background-color: white;
   border: 1px solid black;
   padding: 0 1rem;
   top: 5px;
   z-index: 3;
+}
+
+.custom-detail-title {
+  min-width: max-content !important;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .custom-Special-Button {
@@ -130,7 +136,7 @@
   left: -10px;
   margin-top: 1rem;
   padding: 2rem;
-  background-color: rgb(245, 239, 224);
+  background-color: transparent;
   border: 1px solid black;
 }
 
@@ -138,13 +144,13 @@
   box-shadow: 2px 3px 0 rgba(black, .8);
 }
 .removeBackground {
-  background-color: rgb(245, 239, 224);
+  background-color: transparent;
   border-right-color: transparent;
 }
 
 .removeBorder {
   border-left-color: transparent;
-  background-color: rgb(245, 239, 224);
+  background-color: transparent;
   &:focus {
     background-color: transparent;
   }
@@ -157,7 +163,8 @@
   padding: 0 1rem;
   margin-top: 5px;
   margin-bottom: 2rem;
-  background-color: rgb(245, 239, 224);
+  // background-color: transparent;
+  background-color: transparent;
 
   & > .overLayNameSeeAll {
     position: absolute;
