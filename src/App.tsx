@@ -327,79 +327,132 @@ function App() {
   // @ts-ignore
     return (
     <ThemeProvider breakpoints={['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}>
-        <Container className={"mw-100 pv-4"} style={{ minWidth: "525px" }}>
+        <Container className={"mw-100 pv-4"} style={{ minWidth: "525px", marginBottom: "2rem" }}>
             <div className="linearGradient">
                 <svg viewBox='0 0 2500 7000' xmlns='http://www.w3.org/2000/svg'>
                     <filter id='noiseFilter'>
-                        <feTurbulence 
-                        type='fractalNoise' 
-                        baseFrequency='8.64' 
-                        numOctaves='6' 
+                        <feTurbulence
+                        type='fractalNoise'
+                        baseFrequency='8.64'
+                        numOctaves='6'
                         stitchTiles='stitch'/>
                     </filter>
                     <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
                 </svg>
             </div>
-            <Row>
-                <Col xl={3} lg={12}>
-                    <InputGroup className={"p-0 m-1 searchShadow"}>
-                        <InputGroup.Text id={"search"} className={"p-0 removeBackground"}>
-                            <Button onClick={()=>onMoreHandle()} variant={"outline-secondary"} style={{ height: "100%" }} className={"p-0 m-0 border-0"}>
-                                <img
-                                    src="https://img.icons8.com/ios/50/000000/search--v1.png"
-                                    alt={"search"}
-                                    width={25}
-                                    height={25}
-                                    style={{ margin: "auto 1rem" }}
-                                />
-                            </Button>
-                        </InputGroup.Text>
-                        <Form.Control aria-label={"search"} aria-describedby={"searchGroup"} className={"removeBorder"} />
-                    </InputGroup>
-                </Col>
-                <Col xl={6} lg={12}>
-                    <Row>
-                        <Col><Button variant={"outline-info"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>All</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>USD</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>BTC</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>ETH</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>Crypto</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>Others</Button></Col>
-                        <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>My&nbsp;Dashbord</Button></Col>
-                    </Row>
-                </Col>
-                <Col xl={3} lg={12}>
-                    <Row className={"align-content-end"}>
-                        <Col className={"p-0 m-0 child-obj-center"} style={{width: "4rem"}}>
-                            <p className="text-end m-0">Risk type</p>
-                        </Col>
-                        <Col>
-                            <Dropdown>
-                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
-                            </Dropdown>
-                            {/*<Dropdown.Menu>*/}
-                            {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
-                            {/*    <Dropdown.Item href={"#/actin-2"}>Rist 2</Dropdown.Item>*/}
-                            {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
-                            {/*</Dropdown.Menu>*/}
-                        </Col>
-                        <Col className={"p-0 m-0 child-obj-center"}>
-                            <p className="text-end m-0">Platform</p>
-                        </Col>
-                        <Col>
-                            <Dropdown>
-                                <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
-                            </Dropdown>
-                            {/*<Dropdown.Menu>*/}
-                            {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
-                            {/*    <Dropdown.Item href={"#/actin-2"}>Rist 2</Dropdown.Item>*/}
-                            {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
-                            {/*</Dropdown.Menu>*/}
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-            <Row style={{ margin: "2rem 0 0" }}>
+
+            <div style={{ marginTop: "2rem", marginBottom: "3rem" }}>
+                <Row className={"navBar"}>
+                    <Col xxxl={2} xxl={2} lg={2} md={2} style={{ display: "flex", justifyContent: "flex-start", marginBottom: "5px" }}>
+                        <span>&nbsp;
+                            <img
+                                src={initTableData[detailNum].Pool.icon}
+                                alt={initTableData[detailNum].Pool.name}
+                                width={30}
+                                height={30}
+                            />
+                        </span>
+                        <span>&nbsp;
+                            <img
+                                src={initTableData[detailNum].Pool.icon}
+                                alt={initTableData[detailNum].Pool.name}
+                                width={30}
+                                height={30}
+                            />
+                        </span>
+                        <span>&nbsp;
+                            <img
+                                src={initTableData[detailNum].Pool.icon}
+                                alt={initTableData[detailNum].Pool.name}
+                                width={30}
+                                height={30}
+                            />
+                        </span>
+                    </Col>
+                    <Col style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
+                        <button>Home</button>
+                        <button>Pools</button>
+                        <button>Factory</button>
+                        <button>DAO</button>
+                        <button>Trade</button>
+                        <button>Stats</button>
+                        <button>Risks</button>
+                    </Col>
+                    <Col xxl={2} lg={3} md={3} style={{ textAlign: "right", marginBottom: "5px" }}>
+                        <button onClick={()=>onMoreHandle()}>
+                            Connect wallet
+                            {/*<div/>*/}
+                        </button>
+                    </Col>
+                </Row>
+            </div>
+
+            <div className={"pt-5 CustomTopButtonPos"} style={{ border: "1px solid black", borderLeftColor: "transparent", borderBottomColor: "transparent" }}>
+                <div className={"customButtonWrapper"}>
+                    <span className={"poolButton"} >
+                        Pools
+                    </span>
+                </div>
+                <Row style={{ paddingRight: "1.5rem" }}>
+                    <Col xl={3} lg={12}>
+                        <InputGroup className={"p-0 m-1 searchShadow"}>
+                            <InputGroup.Text id={"search"} className={"p-0 removeBackground"}>
+                                <Button onClick={()=>onMoreHandle()} variant={"outline-secondary"} style={{ height: "100%" }} className={"p-0 m-0 border-0"}>
+                                    <img
+                                        src="https://img.icons8.com/ios/50/000000/search--v1.png"
+                                        alt={"search"}
+                                        width={25}
+                                        height={25}
+                                        style={{ margin: "auto 1rem" }}
+                                    />
+                                </Button>
+                            </InputGroup.Text>
+                            <Form.Control aria-label={"search"} aria-describedby={"searchGroup"} className={"removeBorder"} />
+                        </InputGroup>
+                    </Col>
+                    <Col xl={6} lg={12}>
+                        <Row>
+                            <Col><Button variant={"outline-info"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>All</Button></Col>
+                            <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>USD</Button></Col>
+                            <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>BTC</Button></Col>
+                            <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>ETH</Button></Col>
+                            <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>Crypto</Button></Col>
+                            <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>Others</Button></Col>
+                            <Col><Button variant={"outline-secondary"} className={"w-100 m-1 bg-custom-btn"} onClick={()=>onMoreHandle()}>My&nbsp;Dashbord</Button></Col>
+                        </Row>
+                    </Col>
+                    <Col xl={3} lg={12} >
+                        <Row className={"align-content-end"}>
+                            <Col className={"p-0 m-0 child-obj-center"} style={{width: "4rem"}}>
+                                <p className="text-end m-0">Risk type</p>
+                            </Col>
+                            <Col>
+                                <Dropdown>
+                                    <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
+                                </Dropdown>
+                                {/*<Dropdown.Menu>*/}
+                                {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
+                                {/*    <Dropdown.Item href={"#/actin-2"}>Rist 2</Dropdown.Item>*/}
+                                {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
+                                {/*</Dropdown.Menu>*/}
+                            </Col>
+                            <Col className={"p-0 m-0 child-obj-center"}>
+                                <p className="text-end m-0">Platform</p>
+                            </Col>
+                            <Col>
+                                <Dropdown>
+                                    <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
+                                </Dropdown>
+                                {/*<Dropdown.Menu>*/}
+                                {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
+                                {/*    <Dropdown.Item href={"#/actin-2"}>Rist 2</Dropdown.Item>*/}
+                                {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
+                                {/*</Dropdown.Menu>*/}
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+                <Row style={{ margin: "2rem 0 0" }}>
                 <Col xl={3} lg={12} className={"leftFixedLayout"} style={{ marginTop: "1rem" }}>
                     <div className={"overlayout overCommon"}>
                         <div className={"overChild overCommon overChildCommon"}>
@@ -417,7 +470,7 @@ function App() {
                                                 height={30}
                                             />
                                         </Col>
-                                        <Col className={"text-center h6 custom-detail-title"}>
+                                        <Col className={"text-center custom-detail-title"}>
                                             {initTableData[detailNum].Pool.detail && initTableData[detailNum].Pool.detail}
                                         </Col>
                                         <Col xs={1} className={"text-start"} style={{marginRight:"1rem"}}>
@@ -509,6 +562,11 @@ function App() {
                 </Col>
                 <Col xl={9} lg={12} className={"border-1"}>
                     <div className={"customBasicTablePos"}>
+                        <div className={"customButtonWrapper"}>
+                            <button className={"seeAllButton"} onClick={()=>onMoreHandle()} >
+                                See All Pools
+                            </button>
+                        </div>
                         <table className={"table-hover customTable"} style={{ cursor: "pointer" }}>
                             <thead>
                             <tr>
@@ -579,10 +637,11 @@ function App() {
                         {/*<span className={"overLayNameSeeAll"}>*/}
                         {/*    <button onClick={()=>{onMoreHandle()}}>See all Pools</button>*/}
                         {/*</span>*/}
-                        <div className="custom-outl-table"></div>
+                        {/*<div className="custom-outl-table"></div>*/}
                     </div>
                 </Col>
             </Row>
+            </div>
         </Container>
     </ThemeProvider>
   );

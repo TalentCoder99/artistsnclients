@@ -11,6 +11,61 @@
   z-index: -1;
 }
 
+.navBar {
+  & > div {
+    & > button {
+      width: max-content;
+      padding: 5px 10px;
+      font-weight: bold;
+      font-size: 18px;
+      border-color: transparent;
+      background-color: transparent;
+      &:active, &:visited, &:hover {
+        border-bottom-color: black;
+      }
+    }
+    &:last-child {
+      & > button {
+        position: relative;
+        color: white;
+        background-color: black;
+        & > div {
+          background: url(../star-christmas-svgrepo-com.svg);
+          position: absolute;
+          left: -35px;
+          bottom: 0px;
+          width: 30px;
+          height: 30px;
+          content: "";
+          z-index: 9999;
+        }
+      }
+    }
+  }
+}
+
+.CustomTopButtonPos {
+  position: relative;
+}
+
+.customButtonWrapper {
+  display: flex;
+  justify-content: center;
+  & > span {
+    padding: 5px 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid lightgray;
+  }
+}
+
+.poolButton {
+  position: absolute;
+  content: "";
+  top: -25px;
+}
+
 .overCommon {
   border: 1px solid black;
   box-shadow: 1px 2px 0px rgba(0, 0, 0, .4);
@@ -85,7 +140,8 @@
 .custom-detail-title {
   min-width: max-content !important;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .custom-Special-Button {
@@ -158,11 +214,12 @@
 
 .customBasicTablePos {
   position: relative;
-  width: calc(100% + 10px);
+  width: calc(100% + 14px);
   border: 2px solid gray;
+  border-right-color: transparent;
   padding: 0 1rem;
   margin-top: 5px;
-  margin-bottom: 2rem;
+  //margin-bottom: 2rem;
   // background-color: transparent;
   background-color: transparent;
 
@@ -176,6 +233,14 @@
   & > .custom-outl-table {
     position: absolute;
   }
+}
+
+.seeAllButton {
+  position: absolute;
+  padding: 5px 1rem;
+  bottom: -25px;
+  content: "";
+  z-index: 10;
 }
 
 .customTable {
@@ -195,7 +260,6 @@
       }
 
       & > td {
-        //margin: 1rem;
         padding: 1rem 0;
         border: 2px solid gray;
         border-right-color: transparent;
