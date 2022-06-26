@@ -319,7 +319,7 @@ function App() {
         setDetailNum(key)
     }
     const onMoreHandle = () => {
-        alert("Welcome");
+        alert("Welcome!!!");
     }
 
   // @ts-ignore
