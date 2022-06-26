@@ -2,10 +2,8 @@ import React from "react";
 import ThemeProvider from "react-bootstrap/ThemeProvider";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "react-bootstrap/Form";
-import {Button, Col, Container, Dropdown, InputGroup, Row, Card, Table} from "react-bootstrap";
+import {Button, Col, Container, Dropdown, InputGroup, Row} from "react-bootstrap";
 import "./components/default.scss";
-import { kMaxLength } from "buffer";
-import { maxHeaderSize } from "http";
 
 function App() {
     const [detailNum, setDetailNum] = React.useState(0);
@@ -633,10 +631,6 @@ function App() {
                             ))}
                             </tbody>
                         </table>
-                        {/*<span className={"overLayNameSeeAll"}>*/}
-                        {/*    <button onClick={()=>{onMoreHandle()}}>See all Pools</button>*/}
-                        {/*</span>*/}
-                        {/*<div className="custom-outl-table"></div>*/}
                     </div>
                 </Col>
             </Row>
