@@ -381,7 +381,6 @@ function App() {
                     <Col xxl={2} lg={3} md={3} style={{ textAlign: "right", marginBottom: "5px" }}>
                         <button onClick={()=>onMoreHandle()}>
                             Connect wallet
-                            {/*<div/>*/}
                         </button>
                     </Col>
                 </Row>
