@@ -298,6 +298,42 @@ function App() {
         },
         {
             Pool: {
+                icon: "https://img.icons8.com/external-sbts2018-flat-sbts2018/58/000000/external-bitcoin-cryptocurrency-sbts2018-flat-sbts2018-4.png",
+                name: "frax",
+                currencyType: "USD",
+                feild2: "",
+                feild3: "",
+                detail: "FRAK + 3Cry"
+            },
+            BaseVAPY: 0.30,
+            RewardstAPR: {
+                from: 2.21,
+                to: 5.52,
+            },
+            Volume: 14.7,
+            TVL: 182.2,
+            Fee: 0.030
+        },
+        {
+            Pool: {
+                icon: "https://img.icons8.com/external-sbts2018-flat-sbts2018/58/000000/external-bitcoin-cryptocurrency-sbts2018-flat-sbts2018-4.png",
+                name: "frax",
+                currencyType: "USD",
+                feild2: "",
+                feild3: "",
+                detail: "FRAK + 3Cry"
+            },
+            BaseVAPY: 0.30,
+            RewardstAPR: {
+                from: 2.21,
+                to: 5.52,
+            },
+            Volume: 14.7,
+            TVL: 182.2,
+            Fee: 0.030
+        },
+        {
+            Pool: {
                 icon: "https://img.icons8.com/cotton/64/000000/tether--v1.png",
                 name: "STG/USDC",
                 currencyType: "CRYPTO",
@@ -427,11 +463,6 @@ function App() {
                                 <Dropdown>
                                     <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
                                 </Dropdown>
-                                {/*<Dropdown.Menu>*/}
-                                {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
-                                {/*    <Dropdown.Item href={"#/actin-2"}>Rist 2</Dropdown.Item>*/}
-                                {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
-                                {/*</Dropdown.Menu>*/}
                             </Col>
                             <Col className={"p-0 m-0 child-obj-center"}>
                                 <p className="text-end m-0">Platform</p>
