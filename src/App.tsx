@@ -427,11 +427,6 @@ function App() {
                                 <Dropdown>
                                     <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
                                 </Dropdown>
-                                {/*<Dropdown.Menu>*/}
-                                {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
-                                {/*    <Dropdown.Item href={"#/actin-2"}>Rist 2</Dropdown.Item>*/}
-                                {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
-                                {/*</Dropdown.Menu>*/}
                             </Col>
                             <Col className={"p-0 m-0 child-obj-center"}>
                                 <p className="text-end m-0">Platform</p>
@@ -440,11 +435,6 @@ function App() {
                                 <Dropdown>
                                     <Dropdown.Toggle variant={"outline-secondary"} className={"w-100 h-100 text-start m-1 bg-custom-btn"} id={"risk"}>All</Dropdown.Toggle>
                                 </Dropdown>
-                                {/*<Dropdown.Menu>*/}
-                                {/*    <Dropdown.Item href={"#/actin-1"}>Rist 1</Dropdown.Item>*/}
-                                {/*    <Dropdown.Item href={"#/actin-2"}>Rist 2</Dropdown.Item>*/}
-                                {/*    <Dropdown.Item href={"#/actin-3"}>Rist 3</Dropdown.Item>*/}
-                                {/*</Dropdown.Menu>*/}
                             </Col>
                         </Row>
                     </Col>
